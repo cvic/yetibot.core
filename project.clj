@@ -15,10 +15,21 @@
                    "node_modules/yetibot-dashboard/dist"]
   :main yetibot.core.init
   :plugins [[lein-environ "1.0.3"]
-            [lein-npm "0.6.2"]]
+            [lein-npm "0.6.2"]
+            [lein-topology "0.2.0"]
+            [lein-hiera "1.0.0"]
+            [jonase/eastwood "0.2.6"]
+            [venantius/yagni "0.1.4"]
+            [lein-kibit "0.1.6"]
+            [com.gfredericks/lein-how-to-ns "0.2.2"]
+            [walmartlabs/vizdeps "0.1.6"]
+            [lein-marginalia "0.9.1"]
+            [lein-bikeshed "0.5.1"]
+            [lein-nvd "0.5.3"]
+            [lein-ancient "0.6.15"]]
   :profiles {:profiles/dev {}
              :dev [:profiles/dev
-                   {:plugins [[venantius/ultra "0.5.1"]]}]
+                   {:plugins [[venantius/ultra "0.5.2"]]}]
              :test
              {:resource-paths ["test/resources"]
               :env {:yb-adapters-freenode-type "irc"
@@ -132,6 +143,9 @@
                  ; [markdown-clj "0.9.66"]
 
                  [slack-rtm "0.1.6" :exclusions [[stylefruits/gniazdo]]]
+                 [walmartlabs/datascope "0.1.1"]
+                 [slamhound "1.5.5"]
+                 [repetition-hunter "1.0.0"]
                  ]
 
   :release-tasks [["vcs" "assert-committed"]
